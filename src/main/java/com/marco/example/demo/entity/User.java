@@ -1,12 +1,15 @@
 package com.marco.example.demo.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
 @Entity
+@Data
 @Table
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     Integer id;
 
     @Column
@@ -15,27 +18,4 @@ public class User {
     @Column
     Integer lastName;
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public Integer getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(Integer lastName) {
-        this.lastName = lastName;
-    }
 }

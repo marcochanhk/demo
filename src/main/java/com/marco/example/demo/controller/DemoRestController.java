@@ -1,4 +1,4 @@
-package com.marco.example.demo;
+package com.marco.example.demo.controller;
 
 import org.springframework.web.bind.annotation.*;
 
