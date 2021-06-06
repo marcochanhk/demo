@@ -18,17 +18,19 @@ public class DemoRestController {
     }
 
     @GetMapping("/user")
-    public Iterable<User> getUser(UserDao user) {
-        return userService.getUser();
+    public Iterable<User> getUser(User user) {
+        return userService.getAllUser();
     }
 
     @PostMapping("/user")
-    public String postUser(UserDao user) {
+    public String postUser(@RequestBody User user) {
+        System.out.println("Post user");
+        userService.addNewUser(user.getFirstName(), user.getLastName());
         return "Post user";
     }
 
     @PatchMapping("/user")
-    public String patchUser(UserDao user) {
+    public String patchUser(User user) {
         return "Patch user";
     }
 
