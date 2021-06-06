@@ -1,6 +1,7 @@
 package com.marco.example.demo.controller;
 
 import com.marco.example.demo.dao.UserDao;
+import com.marco.example.demo.entity.User;
 import com.marco.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -17,17 +18,17 @@ public class DemoRestController {
     }
 
     @GetMapping("/user")
-    public UserDao getUser(UserDao user) {
-        return (UserDao) userService.getUser();
+    public Iterable<User> getUser(UserDao user) {
+        return userService.getUser();
     }
 
     @PostMapping("/user")
-    public String postUser() {
+    public String postUser(UserDao user) {
         return "Post user";
     }
 
     @PatchMapping("/user")
-    public String patchUser() {
+    public String patchUser(UserDao user) {
         return "Patch user";
     }
 
