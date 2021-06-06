@@ -24,5 +24,5 @@ public class DemoRestController {
     public String patchUser() {
         return "Patch user";
     }
-    
+
 }
