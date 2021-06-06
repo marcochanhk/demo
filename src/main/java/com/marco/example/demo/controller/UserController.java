@@ -7,10 +7,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.security.Key;
 
 @RestController
 public class UserController {
@@ -31,7 +33,7 @@ public class UserController {
         List<GrantedAuthority> grantedAuthorities = AuthorityUtils
                 .commaSeparatedStringToAuthorityList("ROLE_USER");
 
-        Key key = Keys.secretKeyFor(SignatureAlgorithm.HS256);
+        // Key key = Keys.secretKeyFor(SignatureAlgorithm.HS256);
 
         String token = Jwts
                 .builder()

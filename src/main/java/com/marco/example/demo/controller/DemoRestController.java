@@ -1,6 +1,5 @@
 package com.marco.example.demo.controller;
 
-import com.marco.example.demo.dao.UserDao;
 import com.marco.example.demo.entity.User;
 import com.marco.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
