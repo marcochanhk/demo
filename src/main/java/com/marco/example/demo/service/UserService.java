@@ -20,12 +20,15 @@ public class UserService {
         return userDao.findByCareer(career);
     }
 
-    public Optional<User> getUserDao(Integer id) {
+    public Optional<User> getUserById(Integer id) {
         return userDao.findById(id);
     }
 
-    public void addNewUser(String firstName,String lastName) {
-        User n = new User(firstName, lastName);
-        userDao.save(n);
+    public void addNewUser(User user) {
+        userDao.save(user);
+    }
+
+    public User getUserByName(String firstName,String lastName) {
+        return userDao.findByFirstNameAndLastName(firstName, lastName);
     }
 }

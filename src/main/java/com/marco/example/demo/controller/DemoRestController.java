@@ -28,10 +28,10 @@ public class DemoRestController {
     }
 
     @PostMapping("/user")
-    public String postUser(@RequestBody User user) {
-        System.out.println("Post user");
-        userService.addNewUser(user.getFirstName(), user.getLastName());
-        return "Post user";
+    public User postUser(@RequestBody User user) {
+        userService.addNewUser(user);
+        User rs = userService.getUserByName(user.getFirstName(), user.getLastName());
+        return rs;
     }
 
     @PatchMapping("/user")

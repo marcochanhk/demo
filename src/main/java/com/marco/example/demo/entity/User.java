@@ -28,8 +28,8 @@ public class User {
 
     public User(String firstName, String lastName)
     {
-        firstName = firstName;
-        lastName = lastName;
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
 }
