@@ -16,6 +16,6 @@ public class User {
     String firstName;
 
     @Column
-    Integer lastName;
+    String lastName;
 
 }
