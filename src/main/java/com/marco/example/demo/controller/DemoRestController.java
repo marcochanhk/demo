@@ -17,8 +17,13 @@ public class DemoRestController {
         return "Say Hello World";
     }
 
-    @GetMapping("/user")
-    public Iterable<User> getUser(User user) {
+    @GetMapping("/allUser")
+    public Iterable<User> getAllUser(User user) {
+        return userService.getAllUser();
+    }
+
+    @GetMapping("/userByCareer")
+    public Iterable<User> ByCarees(User user) {
         return userService.getAllUser();
     }
 

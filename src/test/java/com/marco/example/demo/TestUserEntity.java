@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class TestUserEntity {
     @Test
     public void whenGetId_ThenSetId() {
-        User user = new User();
+        User user = new User("first", "last");
         user.setId(1);
         Integer expected = 1;
         Integer actual = user.getId();
@@ -18,7 +18,7 @@ public class TestUserEntity {
 
     @Test
     public void whenSetFirstName_ThenGetFirstName() {
-        User user = new User();
+        User user = new User("first", "last");
         user.setFirstName("Marco");
         String expected = "Marco";
         String actual = user.getFirstName();
@@ -28,7 +28,7 @@ public class TestUserEntity {
 
     @Test
     public void whenSetLastName_ThenGetLastName() {
-        User user = new User();
+        User user = new User("first", "last");
         user.setLastName("Chan");
         String expected = "Chan";
         String actual = user.getLastName();

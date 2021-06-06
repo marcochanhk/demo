@@ -1,6 +1,7 @@
 package com.marco.example.demo.entity;
 
 import lombok.Data;
+import lombok.NonNull;
 
 import javax.persistence.*;
 
@@ -12,10 +13,23 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer id;
 
+    @NonNull
     @Column
     String firstName;
 
+    @NonNull
     @Column
     String lastName;
+
+    @Column
+    String career;
+
+    protected User() {}
+
+    public User(String firstName, String lastName)
+    {
+        firstName = firstName;
+        lastName = lastName;
+    }
 
 }

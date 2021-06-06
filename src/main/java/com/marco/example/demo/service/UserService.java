@@ -16,14 +16,16 @@ public class UserService {
         return userDao.findAll();
     }
 
+    public Iterable<User> getUserByCareer(String career) {
+        return userDao.findByCareer(career);
+    }
+
     public Optional<User> getUserDao(Integer id) {
         return userDao.findById(id);
     }
 
     public void addNewUser(String firstName,String lastName) {
-        User n = new User();
-        n.setFirstName(firstName);
-        n.setFirstName(lastName);
+        User n = new User(firstName, lastName);
         userDao.save(n);
     }
 }
